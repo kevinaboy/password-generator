@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -24,11 +24,44 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+        <div class="options">
+          <h3>Password Options</h3>
+
+          <div class="grid-container">
+            <div class="option length-select container">
+              <label for="passwordLength">Password length: <strong><span id = lengthValue"></span></strong></label>
+              <input type="range" min="8" max="128" value="8" class="length-selector" id="passwordLength">
+            </div>
+            <div class="option">
+              <label for="lowerChars" class="collection">Contains lowercase
+              <input type="checkbox" id="lowerChars" class="collection-selector" checked>
+              <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="option">
+              <label for="upperChars" class="collection">Contains uppercase
+                <input type="checkbox" id="upperChars" class="collection-selector">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="option">
+              <label for="numberChars" class="collection">Contains numbers</label>
+                <input type="checkbox" id="numericChars" class="collection-selector" checkbed>
+                <span class="checkmark"></span>
+              <label>
+            </div>
+            <div class="option">
+              <label for="specialChars" class="collection">Contains special characters
+                <input type="checkbox" id="specialChars" class="collection-selector">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
