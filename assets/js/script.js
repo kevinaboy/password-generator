@@ -67,7 +67,34 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+function generatePassword() {
+  console.log(lowercaseEl.checked);
+  console.log(uppercaseEl.checked);
+  console.log(numbersEl.checked);
+  console.log(symbolsEl.checked);
+  console.log(lengthEl.value);
+  var pw = ""
 
+  for (let i = 0; i <= lengthEl.value; i++) {
+    if (lowercaseEl.checked && pw.length < lengthEl.value) {
+      pw += randomFun.lower();
+    }
+
+    if (uppercaseEl.checked && pw.length < lengthEl.value) {
+      pw += randomFun.upper();
+    }
+
+    if (numbersEl.checked && pw.length < lengthEl.value) {
+      pw += randomFun.number();
+    }
+
+    if (symbolsEl.checked && pw.length < lengthEl.value) {
+      pw += randomFun.symbol();
+    }
+  }
+
+  return pw
+}
 
 // const hasUpper = uppercaseEl.checked;
 
