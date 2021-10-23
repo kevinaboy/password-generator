@@ -1,13 +1,12 @@
 // Assignment code here
 
 // DOM elements
-const resultEl = document.getElementById('result');
-const lengthEl = document.getElementById('length');
-const uppercaseEl = document.getElementById('uppercase');
-const lowercaseEl = document.getElementById('lowercase');
-const numbersEl = document.getElementById('numbers');
-const symbolsEl = document.getElementById('symbols');
-const clipboardEl = document.getElementById('clipboard');
+const resultEl = document.getElementById('password');
+const lengthEl = document.getElementById('passwordLength');
+const uppercaseEl = document.getElementById('upperChars');
+const lowercaseEl = document.getElementById('lowerChars');
+const numbersEl = document.getElementById('numericChars');
+const symbolsEl = document.getElementById('specialChars');
 
 const randomFun = {
   lower: getRandomLower,
@@ -19,14 +18,18 @@ const randomFun = {
 // General Functions
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  // min: 97
+  // max: 122
 }
 
 function getRandomUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  // min: 65
+  // max : 90
 }
 
 function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 48);
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
 function getRandomSymbol() {
@@ -48,24 +51,32 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-  const hasUpper = uppercaseEl.checked;
 
-  console.log(hasUpper);
-/*
-generateBtn.addEventListener("click", ()=> {
-  const hasLower = lowercaseEl.checked;
-  const hasUpper = uppercaseEl.checked;
-  const hasNumber = numbersEl.checked;
-  const hasSymbol = symbolsEl.checked;
+function generatePassword() {
+  console.log(lowercaseEl.checked);
+  console.log(uppercaseEl.checked);
+  console.log(numbersEl.checked);
+  console.log(symbolsEl.checked);
+  console.log(lengthEl.value);
+  var pw = ""
 
-  console.log(hasLower, hasUpper, hasNumber, hasSymbol);
+  for (let i = 0; i <= lengthEl.value; i++) {
+    if (lowercaseEl.checked && pw.length < lengthEl.value) {
+      pw += randomFun.lower();
+    }
 
-});
+    if (uppercaseEl.checked && pw.length < lengthEl.value) {
+      pw += randomFun.upper();
+    }
 
-*/
+    if (numbersEl.checked && pw.length < lengthEl.value) {
+      pw += randomFun.number();
+    }
 
-/*original code for generate button
+    if (symbolsEl.checked && pw.length < lengthEl.value) {
+      pw += randomFun.symbol();
+    }
+  }
 
-generateBtn.addEventListener("click", writePassword);
-
-*/
+  return pw
+}
