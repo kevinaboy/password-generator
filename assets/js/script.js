@@ -8,21 +8,6 @@ const lowercaseEl = document.getElementById('lowerChars');
 const numbersEl = document.getElementById('numericChars');
 const symbolsEl = document.getElementById('specialChars');
 
-// Number, String, Arrays, Booleans, Objects
-
-// const number = 5;
-// const string = "hello";
-// const arrays = ["blue", "red", "yellow"];
-
-// arrays[0] // ---> blue
-
-// const person = {
-//   name: "John",
-//   age: 30
-// }
-
-// person.age // ---> 30
-
 const randomFun = {
   lower: getRandomLower,
   upper: getRandomUpper,
@@ -95,25 +80,3 @@ function generatePassword() {
 
   return pw
 }
-
-// const hasUpper = uppercaseEl.checked;
-
-// console.log(hasUpper);
-/*
-generateBtn.addEventListener("click", ()=> {
-  const hasLower = lowercaseEl.checked;
-  const hasUpper = uppercaseEl.checked;
-  const hasNumber = numbersEl.checked;
-  const hasSymbol = symbolsEl.checked;
-
-  console.log(hasLower, hasUpper, hasNumber, hasSymbol);
-
-});
-
-*/
-
-/*original code for generate button
-
-generateBtn.addEventListener("click", writePassword);
-
-*/
