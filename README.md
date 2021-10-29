@@ -7,4 +7,5 @@ This web app generates a random password based on user-selected criteria. This a
 https://kevinaboy.github.io/password-generator/
 
 ## Screenshot
-![password generator screenshot](https://github.com/kevinaboy/password-generator/blob/main/assets/images/password-generator.png?raw=true)
+![password generator screenshot](assets/images/password%20generator%20screenshot.jpg)
+
